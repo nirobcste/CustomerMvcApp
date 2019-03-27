@@ -1,0 +1,47 @@
+﻿@using System.Data
+@model System.Data.DataTable
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Show Customer List</title>
+</head>
+<body>
+    <table border="1" cellpadding="2" cellspacing="3">
+        <tr>
+            <th>Sl</th>
+            <th>Name</th>
+            <th>Code</th>
+            <th>Address</th>
+            <th>Email</th>
+            <th>Contact</th>
+            <th>Age</th>
+            <th>Loyality Point</th>
+        </tr>
+        @{ int i = 1; }
+        @foreach (DataRow row in Model.Rows)
+        {
+
+            <tr>
+                <td>
+                    <label>@i</label>
+                    @{ i++; }
+                </td>
+                <td>@row["Name"]</td>
+                <td>@row["Code"]</td>
+                <td>@row["Address"]</td>
+                <td>@row["Email"]</td>
+                <td>@row["Contact"]</td>
+                <td>@row["Age"]</td>
+                <td>@row["LoyalityPoint"]</td>
+            </tr>
+        }
+    </table>
+</body>
+</html>
+
